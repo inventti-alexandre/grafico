@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChartTest.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +11,13 @@ namespace ChartTest.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var model = new ChartViewModel
+            {
+                ValuesX = "#Jan#, #Fev#, #Mar#, #Abr#, #Mai#, #Jun#",
+                ValuesY = "10.0, 20.0, 12.0, 18.0, 26.0, 40.0"
+            };
+
+            return View(model);
         }
 
         public ActionResult About()
